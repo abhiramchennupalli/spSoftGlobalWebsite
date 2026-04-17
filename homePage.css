@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* nav bar styling */
+nav {
+    background-color: #074861;
+}
+
+.nav-item a {
+    color: silver;
+}
+
+.nav-item a:hover {
+    color: silver;
+}
+
+.aws-logo {
+    width: 100%;
+    max-width: 139px;
+    height: auto;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background: none;
+   
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    outline: none;
+}
+
+
+/* ending of nav bar styling */
+
+/* section 1 styling */
+.section1video {
+    width: min-content;
+    
+}
