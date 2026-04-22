@@ -1,0 +1,35 @@
+
+a {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+   
+    border: 1px solid #39F;
+    padding: 10px 20px;
+}
+
+/* Fill layer */
+a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #39F;
+    transition: height 1s ease;
+    z-index: -1;
+}
+
+/* Hover effect */
+a:hover::before {
+    height: 100%;
+}
+
+/* Text color change */
+a:hover {
+    color: #fff;
+}
