@@ -1,35 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-a {
-    position: relative;
-    display: inline-block;
-    color: #000;
-    text-decoration: none;
-    overflow: hidden;
-    z-index: 1;
-   
-    border: 1px solid #39F;
-    padding: 10px 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Fill layer */
-a::before {
+/* GLOBAL DECLARATION */
+.fs-18{
+    font-size: 18px;
+}
+.anchor-color{
+    color: #3399FF;;
+}
+/* SECTION 01 */
+
+.section-one {
+    padding: 0;
+    margin: 0;
+}
+
+.section-one-main-div {
+    width: 100%;
+    height: 100vh;
+    /* full screen */
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.section-one-video-div {
+    width: 100%;
+    height: 100%;
+}
+
+.section-one-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+}
+
+.section-one-absolute-div {
+
+    position: absolute;
+    /* border: 1px rgb(17, 1, 1) solid; */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 90%;
+
+
+}
+
+.section-one-absolute-div h1 {
+    color: white;
+
+
+}
+
+.section-one-absolute-div p {
+    color: #E0E0E0;
+}
+
+.section-one-absolute-div a {
+    border: 1px #5AD0EB solid;
+    color: #3399FF;
+}
+
+/* anchor tag hover effect */
+
+.fill-btn {
+    position: relative;
+    display: inline-block;
+    color: white;
+    border: 2px solid #5AD0EB;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.fill-btn::before {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 0%;
-    background-color: #39F;
-    transition: height 1s ease;
+    background-color: #5AD0EB;
     z-index: -1;
+    transition: height 0.4s ease;
 }
 
-/* Hover effect */
-a:hover::before {
+.fill-btn:hover::before {
     height: 100%;
 }
 
-/* Text color change */
-a:hover {
-    color: #fff;
+.fill-btn:hover {
+    color: white;
 }
+
+
+
+
+
+
+
+
+
+
+/* SECTION 02 */
+
+.section-two {
+    background-image: url(./src/images/section2/home_banner2.svg);
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+
+}
+
+.section-two-main-div {
+    padding-top: 3rem;
+}
+
+#section-two-main-para-content {
+    color: #B6BDBF;
+    font-size: 18px;
+}
+
+#section-two-hover-anchor {
+    border: 1px #5AD0EB solid;
+    color: #3399FF;
+}
+
+.color-gray {
+    color: #B6BDBF;
+}
+
+
+
+
+
+
+
+
+/* SECTION 03 */
+
+.section-three {
+    background-color: #000E1A;
+}
+
+
+.section-three img{
+    width: 320px;
+}
+
+/* SECTION 04 */
+
+.section-four{
+    background-image: url(./src/images/section4/section4bg.png);
+}
+/* SECTION 05 */
+/* SECTION 06 */
+/* SECTION 07 */
+/* SECTION 08 */
+/* SECTION 09 */
+/* SECTION 10 */
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .section-one-video {
+        object-position: 50% 40%;
+
+    }
+}
+
+
+/* TAB SCREEN */
+@media (min-width: 768px) {
+    .section-one-absolute-div {
+        width: 80%;
+
+    }
+}
+
+/* LAPTOP SCREEN */
+
+/* DESKTOP SCREEN */
