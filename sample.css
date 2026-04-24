@@ -10,6 +10,9 @@
 .fs-18{
     font-size: 18px;
 }
+.min-height{
+    height: min-content;
+}
 .anchor-color{
     color: #3399FF;;
 }
@@ -162,6 +165,11 @@
 
 .section-four{
     background-image: url(./src/images/section4/section4bg.png);
+}
+
+.plus-position-1{
+    top: 10px;
+    left: 120%;
 }
 /* SECTION 05 */
 /* SECTION 06 */
