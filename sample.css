@@ -262,14 +262,28 @@
 .section-seven-eight{
     padding: 70px 0px !important;
 }
-
+.section-eight-main{
+  padding:90px 0px 0px 0px !important ;
+}
 .section-eight-main h6{
     color: white;
+    font-size: 27px;
+    font-weight: 700;
+    
+    margin: 5px 0px !important;
 }
 .section-eight-main p{
     color: #b1b1b1;
+    font-size: 18px;
+    text-transform: uppercase;
+   
+    margin: 5px 0px !important;
 }
-
+hr {
+  border: none;
+  height:2px;
+  background-color:#C9C9C9;
+}
 
 
 
@@ -285,7 +299,138 @@
 
 
 /* SECTION 09 */
+.section-nine{
+  background-color: #022530;
+}
+.section-nine-main-div{
+  padding: 30px 0px 10px 0px !important;
+
+}
+
+.section-nine h2{
+  font-size:30px;
+}
+.section-nine-image-main-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+    
+}
+.section-nine-image-main-div div{
+  width: 130px;
+  padding: 0px;
+}
+.section-nine-image-main-div img{
+  width: 100%;
+}
+.section-nine-p-div{
+  width: 95%;
+  padding: 30px 0px;
+}
+.section-nine-p-div p{
+  color: #8e8e8e;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+
+
+
+
+
 /* SECTION 10 */
+.section-ten{
+ 
+   background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("./src/images/section10/image.png");
+}
+
+.section-ten-main-div{
+  width: 90%;
+}
+#section-ten-first-col-p-tag{
+  color: #d0d0d0;
+  font-size: 18px;
+}
+.section-ten h6{
+  font-size: 27px;
+  font-weight: 500;
+}
+footer{
+  background-color: #02394E;
+}
+.footer-list-list a{
+  text-decoration: none;
+  color: #bdbdbd;
+}
+
+.footer-address{
+  color: #bdbdbd;
+}
+
+footer a:hover{
+  
+  color: rgb(111, 111, 246);
+}
+
+
+.footer-button{
+  border: none;
+  
+}
+
+
+/* ASIDE */
+.social-liks {
+  display:inline-flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SECTION 11 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
@@ -343,7 +488,41 @@
 .section-seven-eight{
     padding: 70px 0px !important;
 }
+.section-nine h2{
+  font-size: 45px;
+}
+.section-nine-main-div{
+  padding: 80px 0px 20px 0px !important;
+  
+}
+.section-nine-p-div{
+  width: 95%;
+  padding: 60px 0px;
+}
 
+.section-ten-main-div{
+  width: 70%;
+}
+
+.footer-main-div{
+  width: 80%;
+}
+.whatsapp{
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  
+}
+#thirty-years{
+  position: fixed;
+  top: 11%;
+  right: 2%;
+}
+.social-liks{
+  position: fixed;
+  top: 40%;
+  right: 0%;
+}
 }
 
 /* LAPTOP SCREEN */
