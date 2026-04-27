@@ -271,6 +271,22 @@ document.getElementById("year").textContent = new Date().getFullYear();
     sideMenu.classList.remove("active");
   });
 
+  {
+    const menuBtn = document.getElementById("SmallScreenMenuBtn");
+    const sideMenu = document.getElementById("SmallScreenSideMenu");
+    const closeBtn = document.getElementById("SmallScreenCloseMenu");
+
+    // OPEN MENU
+    menuBtn.addEventListener("click", () => {
+      sideMenu.classList.add("active");
+    });
+
+    // CLOSE MENU
+    closeBtn.addEventListener("click", () => {
+      sideMenu.classList.remove("active");
+    });
+  }
+
 }
 
 //sidebar active code
@@ -285,5 +301,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
       link.classList.add("active");
     });
+  });
+}
+
+// disclamer 
+{
+  const disclaimer = document.getElementById("disclaimer");
+  const closeBtn = document.getElementById("closeDisclaimer");
+
+  closeBtn.addEventListener("click", () => {
+    disclaimer.style.display = "none";
   });
 }
