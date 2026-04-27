@@ -69,7 +69,7 @@ nav {
   top: 0;
   right: -100%;
 
-  width: 280px;
+  width: 350px;
   height: 100vh;
   background: #051E30;
   transition: right 0.3s ease;
@@ -755,97 +755,5 @@ footer a:hover {
 }
 
 /* DESKTOP SCREEN */
+/* ---------------------------------------------------------------------------------------------------------- */
 
-/* ANIMATION USING CSS AND JS */
-/* SECTION 02 */
-/* .section-two-heading-animation {
-  opacity: 0;
-  transform: translateY(70px); 
-  transition:
-    opacity 0.5s ease,
-    transform 0.9s ease;
-}
-
-.section-two-heading-animation.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section-two-second-div-animation {
-  opacity: 0;
-  transform: translateX(-50px); 
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-}
-
-.section-two-second-div-animation.show {
-  opacity: 1;
-  transform: translateX(0); 
-} */
-
-/* SECTION THREE ANIMATION */
-
-/* .section-three-animation-one {
-  opacity: 0;
-  transform: translateY(40px); 
-  transition:
-    opacity 0.9s ease-out,
-    transform 0.9s ease-out;
-}
-
-.section-three-animation-one.show {
-  opacity: 1;
-  transform: translateY(0); 
-} */
-
-/* SECTION FOUR */
-/* .section-four-animation-text {
-  opacity: 0;
-  transform: translateX(-40px); 
-  transition:
-    opacity 0.9s ease-out,
-    transform 0.9s ease-out;
-}
-
-.section-four-animation-text.show {
-  opacity: 1;
-  transform: translateX(0); 
-}
-.section-four-animation-image {
-  opacity: 0;
-  transform: translateY(40px); 
-  transition:
-    opacity 0.9s ease-out,
-    transform 0.9s ease-out;
-}
-
-.section-four-animation-image.show {
-  opacity: 1;
-  transform: translateY(0); 
-} */
-/* SECTION FIVE ANIMATION */
-/* .section-five-text-animation {
-  opacity: 0;
-  transform: translateY(35px); 
-  transition:
-    opacity 0.8s ease-out,
-    transform 0.8s ease-out;
-  will-change: opacity, transform; 
-}
-
-.section-five-text-animation.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.section-five-images-animation {
-  opacity: 0;
-  transform: translateY(35px); 
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform;
-}
-
-.section-five-images-animation.show {
-  opacity: 1;
-  transform: translateY(0);
-} */

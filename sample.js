@@ -1,261 +1,27 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 //ANIMATION
-// {
-//   //SECTION TWO ANIMATION
-//   {
-//     //HEADING
-//     {
-//       const elements = document.querySelectorAll(
-//         ".section-two-heading-animation",
-//       );
+{//refresh to top 
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-//       let lastScrollY = window.scrollY;
+  window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+  });
+}
 
-//       const observer = new IntersectionObserver(
-//         (entries) => {
-//           entries.forEach((entry) => {
-//             const currentScrollY = window.scrollY;
 
-//             if (entry.isIntersecting) {
-//               // Only animate when scrolling DOWN
-//               if (currentScrollY > lastScrollY) {
-//                 entry.target.classList.add("show");
-//               }
-//             } else {
-//               // Reset only when scrolling UP (so it can animate again later)
-//               if (currentScrollY < lastScrollY) {
-//                 entry.target.classList.remove("show");
-//               }
-//             }
+//footer button to scroll up
+{
+  document.querySelector(".footer-button").addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
 
-//             lastScrollY = currentScrollY;
-//           });
-//         },
-//         {
-//           threshold: 0.3,
-//         },
-//       );
-
-//       elements.forEach((el) => observer.observe(el));
-//     }
-
-//     {
-//       //SECOND SECTION CASE STUDY
-//       const elements = document.querySelectorAll(
-//         ".section-two-second-div-animation",
-//       );
-
-//       let lastScrollY = window.scrollY;
-
-//       const observer = new IntersectionObserver(
-//         (entries) => {
-//           entries.forEach((entry) => {
-//             const currentScrollY = window.scrollY;
-
-//             if (entry.isIntersecting) {
-//               // animate only when scrolling DOWN
-//               if (currentScrollY > lastScrollY) {
-//                 entry.target.classList.add("show");
-//               }
-//             } else {
-//               // reset when scrolling UP
-//               if (currentScrollY < lastScrollY) {
-//                 entry.target.classList.remove("show");
-//               }
-//             }
-
-//             lastScrollY = currentScrollY;
-//           });
-//         },
-//         {
-//           threshold: 0.3,
-//         },
-//       );
-
-//       elements.forEach((el) => observer.observe(el));
-//     }
-//   }
-
-//   //SECTION THREE ANIMATION
-//   {
-//     //1ST
-//     {
-//       const elements = document.querySelectorAll(".section-three-animation-one");
-
-//       let lastScrollY = window.scrollY;
-
-//       const observer = new IntersectionObserver(
-//         (entries) => {
-//           entries.forEach((entry) => {
-//             const currentScrollY = window.scrollY;
-
-//             if (entry.isIntersecting) {
-//               // Animate ONLY when scrolling DOWN
-//               if (currentScrollY > lastScrollY) {
-//                 entry.target.classList.add("show");
-//               }
-//             } else {
-//               // Reset silently when scrolling UP
-//               if (currentScrollY < lastScrollY) {
-//                 entry.target.classList.remove("show");
-//               }
-//             }
-
-//             lastScrollY = currentScrollY;
-//           });
-//         },
-//         {
-//           threshold: 0.3,
-//         },
-//       );
-
-//       elements.forEach((el) => observer.observe(el));
-//     }
-//     {
-//       //second
-//       const elements = document.querySelectorAll(".section-three-animation-one");
-
-//       let lastScrollY = window.scrollY;
-
-//       const observer = new IntersectionObserver(
-//         (entries) => {
-//           entries.forEach((entry) => {
-//             const currentScrollY = window.scrollY;
-
-//             if (entry.isIntersecting) {
-//               // Animate ONLY when scrolling DOWN
-//               if (currentScrollY > lastScrollY) {
-//                 entry.target.classList.add("show");
-//               }
-//             } else {
-//               // Reset silently when scrolling UP
-//               if (currentScrollY < lastScrollY) {
-//                 entry.target.classList.remove("show");
-//               }
-//             }
-
-//             lastScrollY = currentScrollY;
-//           });
-//         },
-//         {
-//           threshold: 0.3,
-//         },
-//       );
-
-//       elements.forEach((el) => observer.observe(el));
-//     }
-//   }
-
-//   //SECTION FOUR ANIMATION
-//   {
-//     {
-//       //TEXT
-//       const elements = document.querySelectorAll(".section-four-animation-text");
-
-//       let lastScrollY = window.scrollY;
-
-//       const observer = new IntersectionObserver(
-//         (entries) => {
-//           entries.forEach((entry) => {
-//             const currentScrollY = window.scrollY;
-
-//             if (entry.isIntersecting) {
-//               // animate only when scrolling DOWN
-//               if (currentScrollY > lastScrollY) {
-//                 entry.target.classList.add("show");
-//               }
-//             } else {
-//               // reset silently when scrolling UP
-//               if (currentScrollY < lastScrollY) {
-//                 entry.target.classList.remove("show");
-//               }
-//             }
-
-//             lastScrollY = currentScrollY;
-//           });
-//         },
-//         {
-//           threshold: 0.3,
-//         },
-//       );
-
-//       elements.forEach((el) => observer.observe(el));
-//     }
-//     {
-//       //IMAGE
-//       const elements = document.querySelectorAll(".section-four-animation-image");
-
-//       let lastScrollY = window.scrollY;
-
-//       const observer = new IntersectionObserver(
-//         (entries) => {
-//           entries.forEach((entry) => {
-//             const currentScrollY = window.scrollY;
-
-//             if (entry.isIntersecting) {
-//               // animate only when scrolling DOWN
-//               if (currentScrollY > lastScrollY) {
-//                 entry.target.classList.add("show");
-//               }
-//             } else {
-//               // reset when scrolling UP
-//               if (currentScrollY < lastScrollY) {
-//                 entry.target.classList.remove("show");
-//               }
-//             }
-
-//             lastScrollY = currentScrollY;
-//           });
-//         },
-//         {
-//           threshold: 0.3,
-//         },
-//       );
-
-//       elements.forEach((el) => observer.observe(el));
-//     }
-//   }
-
-//   //SECTION FIVE
-//   {
-//     {
-//       const elements = document.querySelectorAll(
-//         ".section-five-text-animation, .section-five-images-animation",
-//       );
-
-//       let lastScrollY = window.scrollY;
-
-//       const observer = new IntersectionObserver(
-//         (entries) => {
-//           entries.forEach((entry) => {
-//             const currentScrollY = window.scrollY;
-
-//             if (entry.isIntersecting) {
-//               // animate only when scrolling DOWN
-//               if (currentScrollY > lastScrollY) {
-//                 entry.target.classList.add("show");
-//               }
-//             } else {
-//               // reset only when scrolling UP
-//               if (currentScrollY < lastScrollY) {
-//                 entry.target.classList.remove("show");
-//               }
-//             }
-
-//             lastScrollY = currentScrollY;
-//           });
-//         },
-//         {
-//           threshold: 0.3,
-//         },
-//       );
-
-//       elements.forEach((el) => observer.observe(el));
-//     }
-//   }
-// }
 //NAV BAr TOGGLE
-
 {
   const menuBtn = document.getElementById("menuBtn");
   const sideMenu = document.getElementById("sideMenu");
@@ -266,11 +32,20 @@ document.getElementById("year").textContent = new Date().getFullYear();
     sideMenu.classList.add("active");
   });
 
-  // Close menu
+  // Close menu (cross button)
   closeBtn.addEventListener("click", () => {
     sideMenu.classList.remove("active");
   });
 
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = sideMenu.contains(e.target);
+    const isClickOnButton = menuBtn.contains(e.target);
+
+    if (!isClickInsideMenu && !isClickOnButton) {
+      sideMenu.classList.remove("active");
+    }
+  });
   {
     const menuBtn = document.getElementById("SmallScreenMenuBtn");
     const sideMenu = document.getElementById("SmallScreenSideMenu");
@@ -301,15 +76,5 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
       link.classList.add("active");
     });
-  });
-}
-
-// disclamer 
-{
-  const disclaimer = document.getElementById("disclaimer");
-  const closeBtn = document.getElementById("closeDisclaimer");
-
-  closeBtn.addEventListener("click", () => {
-    disclaimer.style.display = "none";
   });
 }
