@@ -1,5 +1,5 @@
 document.getElementById("year").textContent = new Date().getFullYear();
-//ANIMATION
+
 {//refresh to top 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -76,5 +76,53 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
       link.classList.add("active");
     });
+  });
+}
+{
+  //animation
+  const elements = document.querySelectorAll(".animate");
+
+  let lastScrollY = window.scrollY;
+
+  /* -------- INTERSECTION OBSERVER -------- */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const currentScrollY = window.scrollY;
+
+      if (entry.isIntersecting && currentScrollY > lastScrollY) {
+        entry.target.classList.add("show");
+      }
+
+      if (!entry.isIntersecting && currentScrollY < lastScrollY) {
+        entry.target.classList.remove("show");
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  }, {
+    threshold: 0,
+    rootMargin: "0px 0px -150px 0px"
+  });
+
+  elements.forEach((el) => observer.observe(el));
+
+  /* -------- SCROLL FALLBACK (IMPORTANT) -------- */
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+
+      // If element is in viewport → ensure animation runs
+      if (
+        rect.top < window.innerHeight - 100 &&
+        rect.bottom > 0 &&
+        currentScrollY > lastScrollY
+      ) {
+        el.classList.add("show");
+      }
+    });
+
+    lastScrollY = currentScrollY;
   });
 }

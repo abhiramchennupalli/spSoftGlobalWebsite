@@ -130,7 +130,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  
+
 }
 
 /* ACTIVE STATE */
@@ -517,6 +517,8 @@ hr {
   font-weight: 500;
 }
 
+
+/* FOOTER */
 footer {
   background-color: #02394e;
 }
@@ -536,6 +538,10 @@ footer a:hover {
 
 .footer-button {
   border: none;
+}
+
+#footer-year-text {
+  font-size: 14px;
 }
 
 /* ASIDE */
@@ -757,3 +763,48 @@ footer a:hover {
 /* DESKTOP SCREEN */
 /* ---------------------------------------------------------------------------------------------------------- */
 
+/* ANIMATIONS */
+/* 
+class="animate animate-up"
+class="animate animate-left"
+class="animate animate-right"
+class="animate animate-grow-up"*/
+
+
+.animate {
+  opacity: 0;
+  transition: all 0.8s ease;
+  will-change: transform, opacity;
+}
+
+
+.animate-up {
+  transform: translateY(50px);
+}
+
+
+.animate-left {
+  transform: translateX(-80px);
+}
+
+
+.animate-right {
+  transform: translateX(80px);
+}
+
+
+.animate.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+.animate-grow-up {
+  transform: translateY(60px) scale(0.8);
+}
+
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
