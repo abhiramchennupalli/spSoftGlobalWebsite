@@ -255,6 +255,7 @@ nav {
 
 .fill-btn:hover {
   color: white;
+  border: 1px solid #5ad0eb !important;
 }
 
 /* SECTION 02 */
@@ -468,7 +469,11 @@ hr {
 .section-nine h2 {
   font-size: 30px;
 }
-
+/* ----------------Images 18 animation--------------- */
+.section-nine-image-main-div div {
+  transition: transform 0.2s linear;
+  will-change: transform;
+}
 .section-nine-image-main-div {
   display: flex;
   flex-wrap: wrap;
@@ -495,7 +500,16 @@ hr {
   font-weight: 600;
   text-align: center;
 }
-
+.section-nine-up-animation {
+  transform: translateY(0);
+  transition: transform 1.8s ease; /* 🔥 increase time */
+  will-change: transform;
+}
+.section-nine-down-animation {
+  transform: translateY(0);
+  transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
 /* SECTION 10 */
 .section-ten {
   background:
@@ -583,7 +597,7 @@ footer a:hover {
 }
 
 .side-menu-anchor.active {
-  color: white;
+  color: rgb(250, 242, 242);
   border-left: 3px white solid;
 }
 

@@ -66,17 +66,75 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 //sidebar active code
 {
-  const links = document.querySelectorAll(".side-menu-anchor");
+  // const links = document.querySelectorAll(".side-menu-anchor");
 
-  links.forEach(link => {
-    link.addEventListener("click", () => {
+  // links.forEach(link => {
+  //   link.addEventListener("click", () => {
 
-      links.forEach(l => l.classList.remove("active"));
+  //     links.forEach(l => l.classList.remove("active"));
 
 
-      link.classList.add("active");
+  //     link.classList.add("active");
+  //   });
+  // });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".side-menu-anchor");
+
+    // get sections from hrefs
+    const sections = Array.from(links).map(link =>
+      document.querySelector(link.getAttribute("href"))
+    );
+
+    let isClickScrolling = false;
+
+    // 👉 CLICK
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        isClickScrolling = true;
+
+        links.forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+
+        setTimeout(() => {
+          isClickScrolling = false;
+        }, 800);
+      });
+    });
+
+    // 👉 SCROLL
+    window.addEventListener("scroll", () => {
+      if (isClickScrolling) return;
+
+      let currentSection = null;
+
+      sections.forEach((section) => {
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+
+        // section in middle of screen
+        if (rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2) {
+          currentSection = section.id;
+        }
+      });
+
+      if (currentSection) {
+        links.forEach((link) => {
+          link.classList.remove("active");
+
+          if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+          }
+        });
+      }
     });
   });
+
+
+
+
 }
 {
   //animation
@@ -125,4 +183,98 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
     lastScrollY = currentScrollY;
   });
+}
+
+{
+  //number counting
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const fastCounters = document.querySelectorAll(".count");
+    const slowCounters = document.querySelectorAll(".count-slow");
+
+    const TOTAL_DURATION = 18000; // 18 seconds
+
+    let started = false;
+
+    // 👉 FAST COUNTER (sync with total duration)
+    const animateFast = (el) => {
+      const target = +el.getAttribute("data-target");
+      let startTime = null;
+
+      const update = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+
+        const progress = timestamp - startTime;
+        const percentage = Math.min(progress / TOTAL_DURATION, 1);
+
+        const value = Math.floor(percentage * target);
+        el.innerText = value;
+
+        if (percentage < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.innerText = target;
+        }
+      };
+
+      requestAnimationFrame(update);
+    };
+
+    // 👉 SLOW COUNTER (2 sec per step)
+    const animateSlow = (el) => {
+      const target = +el.getAttribute("data-target");
+      let count = 0;
+
+      const interval = setInterval(() => {
+        count++;
+        el.innerText = count;
+
+        if (count >= target) {
+          clearInterval(interval);
+        }
+      }, 2000); // 2 sec
+    };
+
+    // 👉 START ONCE (no stopping)
+    const section = document.querySelector(".section-seven-count-main-div").parentElement;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+
+          fastCounters.forEach(el => animateFast(el));
+          slowCounters.forEach(el => animateSlow(el));
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
+
+  });
+}
+
+{
+  const elements = document.querySelectorAll(".section-nine-up-animation");
+  const section = document.querySelector(".section-nine-image-main-div");
+
+  let triggered = false;
+
+  window.addEventListener("scroll", () => {
+    const rect = section.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight && !triggered) {
+      triggered = true;
+
+      elements.forEach((el, i) => {
+        const height = el.offsetHeight; // 🔥 get element height
+
+        setTimeout(() => {
+          el.style.transform = `translateY(-${height}px)`;
+        }, i * 80); // optional stagger
+      });
+    }
+  });
+
+
 }
