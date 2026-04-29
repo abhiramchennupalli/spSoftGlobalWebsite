@@ -254,6 +254,8 @@ document.getElementById("year").textContent = new Date().getFullYear();
   });
 }
 
+
+//section nine animation images animate up and down
 {
   const elements = document.querySelectorAll(".section-nine-up-animation");
   const section = document.querySelector(".section-nine-image-main-div");
@@ -276,5 +278,27 @@ document.getElementById("year").textContent = new Date().getFullYear();
     }
   });
 
+  //animationg down====== edi chestunte total animation agipotundi
+  document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".section-nine-down-animation");
+  const section = document.querySelector(".section-nine-image-main-div");
 
+  let triggered = false;
+
+  window.addEventListener("scroll", () => {
+    const rect = section.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight && !triggered) {
+      triggered = true;
+
+      elements.forEach((el, i) => {
+        const height = el.offsetHeight;
+
+        setTimeout(() => {
+          el.style.transform = `translateY(${height}px)`;
+        }, i * 80);
+      });
+    }
+  });
+});
 }
