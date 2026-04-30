@@ -645,27 +645,6 @@ footer a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* SECTION 11 */
-
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .section-one-video {
@@ -823,3 +802,5 @@ class="animate animate-grow-up"*/
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+
+/* ----------------------------CONTACT HTML PAGE------------------------------------- */
